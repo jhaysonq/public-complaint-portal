@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Portal [STUDENT]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind.config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            color: {
+              'white': '#F5F5F7',
+            },
+            fontFamily: {
+                sans: ['poppins', 'sans-serif'],
+            },
+            fontSize: {
+              'xs': '9px',
+            },
+            extend: {
+                spacing: {
+                    
+                },
+                borderRadius: {
+                    'md': '8px',
+                    'lg': '30px',
+                    'xl': '45px',
+                },
+            },
+        }  
+    }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
+
+</head>
+<body class="bg-blue-100">
+  <!-- Personal Information -->   
+  <section class="flex items-center xl:h-screen xl:w-full justify-center">
+    <div class="bg-gray-100 border border-gray-200 drop-shadow-md w-fit rounded-lg px-6 py-5 pt-6 ">
+      <h1 class="mb-5 text-center text-2xl font-bold">Edit your Information</h1>
+      <form method="post" action="#">
+        <div class="grid xl:grid-cols-2">
+          <div class="xl:pr-3 xl:border-r">
+              <div class="grid gap-2 xl:grid-cols-3">
+                  <!-- first name -->
+                  <div class="w-full">
+                    <label for="fname" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">First name</label>
+                    <input type="text" id="fname" name="fname" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  
+                  <!-- middle name -->
+                  <div class="w-full">
+                    <label for="mname" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Middle name<span class="text-red-500">*</span></label>
+                    <input type="text" id="mname" name="mname" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  
+                  <!-- last name -->
+                  <div class="w-full">
+                    <label for="lname" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Last name</label>
+                    <input type="text" id="lname" name="lname" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  
+                  <!-- suffix -->
+                      <div class="w-full">
+                        <label for="suffix" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Suffix</label>
+                        <input type="text" id="suffix" name="suffix" placeholder="ex. Jr, Sr, II" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      </div>
+    
+                      <!-- age -->
+                      <div class="w-full">
+                        <label for="age" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Age:</label>
+                        <input type="number" id="age" name="age" min="1" max="999" required placeholder="00" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      </div>
+                
+                  <!-- sex -->
+                  <div class="w-full">
+                    <label for="sex" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Sex</label>
+                    <!-- drop down -->
+                    <select id="sex" name="sex" required placeholder="900-000-0000" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <option selected>Choose a sex</option>
+                      <option name="sex" value="female">Female</option>
+                      <option name="sex" value="male">Male</option>
+                    </select>
+                  </div>
+                  
+                  <!-- birthdate   -->
+                    <div class="w-full">
+                      <label for="bdate" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Birthdate</label>
+                      <input type="date" id="bdate" name="bdate" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+    
+                    <!-- phone number -->
+                    <div class="xl:col-span-2">
+                      <label for="phone" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+                      <input type="tel" id="phone" name="number" placeholder="9XX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+                  
+                  <span class="text-xs italic text-red-500">*input N/A if not applicable</span>
+              </div>
+          </div>
+          <div class="xl:pl-3 pt-2">
+              <div class="grid gap-2 xl:grid-cols-2">
+                <!-- student number -->
+                <div class="sm:col-span-2">
+                    <label for="student-number" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Student number</label>
+                    <input type="number" id="student-number" name="student-number" placeholder="XXXX-XXXXX" pattern="[0-9]{4}-[0-9]{5}" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div> 
+                  
+                  <!-- college program -->
+                  <div class="sm:col-span-2">
+                    <label for="college-program" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">College program</label>
+                    <!-- drop down -->
+                    <select id="college-program" name="college-program" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <option selected>Choose a program</option>
+                      <option value="bsit">B.S. in Information Technology</option>
+                      <option value="bscs">B.S. in Computer Science</option>
+                      <option value="bsa">B.S. in Accountancy</option>
+                      <option value="bsais">B.S. in Accounting Information System</option>
+                      <option value="beed">Bachelor of Elementary Education</option>
+                      <option value="bseed">Bachelor of Secondary Education</option>
+                      <option value="bspsych">B.S. in Psychology</option>
+                    </select>
+                  </div>
+    
+                  <!-- major in -->
+                  <div class="col-span-2">
+                    <label for="major" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Major in</label>
+                    <!-- drop down -->
+                    <select id="major" name="major" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <option selected>None</option>
+                      <option value="m-english">English</option>
+                       <option value="m-mathematics">Mathematics</option>
+                       <option value="m-science">Science</option>
+                      </select>
+                  </div>
+    
+                  <!-- year level -->
+                    <div class="">
+                      <label for="year-level" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Year level</label>
+                      <select id="year-level" name="year-level" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <!-- drop down --> 
+                        <option selected>Choose year level</option>
+                        <option value="1st-year">1st Year</option>
+                        <option value="2nd-year">2nd Year</option>
+                        <option value="3rd-year">3rd Year</option>
+                        <option value="4th-year">4th Year</option>
+                        <option value="5th-year">5th Year</option>
+                      </select>
+                    </div>
+          
+                    <!-- section -->
+                    <div class="">
+                      <label for="section" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Section</label>
+                      <input type="text" id="section" name="section" placeholder="1 IT-6" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+              </div>
+              </div> 
+          </div>
+          <!-- submit button -->
+        <div class="my-3 flex-auto flex flex-row-reverse">
+          <a href="/pages/profile.html">
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Edit
+            </button>
+          </a>
+        </div>
+        </div>  
+
+        
+      </form>  
+    </div>
+  </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+</html>

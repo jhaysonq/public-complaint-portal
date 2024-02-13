@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind.config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          
+          fontFamily: {
+              sans: ['poppins', 'sans-serif'],
+          },
+          extend: {
+              spacing: {
+                  
+              },
+              borderRadius: {
+                  'md': '8px',
+                  'lg': '30px',
+              },
+          },
+      }  
+  }
+    </script>
+    <link rel="stylesheet" href="./assets/css/tailwind.output.css" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="./assets/js/init-alpine.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+
+</head>
+<body>
+        <!-- academic-complaint-form  -->
+        <div class="bg-gray-100 border border-gray-200 drop-shadow-md w-fit rounded-lg px-6 py-5 pt-6 ">
+          <h1 class=" text-center text-2xl font-bold text-gray-800 dark:text-white">COMPLAINT FORM</h1>
+          <span class="mb-5 text-sm  flex justify-center">Academic Grievance</span>
+          <form method="post" action="#">
+            <div class="overflow-y-auto max-h-screen grid xl:grid-cols-2">
+                <!-- page 1 -->
+              <div class="xl:pr-3 xl:border-r">
+                  <div class="grid gap-2 xl:grid-cols-2">
+                    <!-- category -->
+                    <div class="xl:col-span-2 mb-2 flex justify-evenly items-center bg-blue-200 rounded-md">
+                        <label class="p-2 text-base font-medium">CATEGORY</label>
+                        <select required class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option>Grading</option>
+                          <option>Academic Misconduct</option>
+                          <option>Discrimination or Retaliation</option>
+                          <option>Faculty Conduct Violations</option>
+                        </select>
+                    </div>
+                    <!-- title -->
+                    <div class="xl:col-span-2">
+                        <label for="title" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                        <input type="text" id="title" name="title" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+                    <!-- input name instructor/staff -->
+                    <div class="md:col-span-2">
+                        <label for="prof-involve" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Name of Instructor, Student, or Staff involve</label>
+                        <input type="text" id="prof-involve" name="prof-involve" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div> 
+                    <!-- input date -->
+                    <div class="w-full">
+                        <label for="date" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Date of incident</label>
+                        <input type="date" id="date" name="date" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      </div>
+                      <!-- input time -->
+                      <div class="w-full">  
+                        <label class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">
+                          Time of Incident<span class="text-red-600 italic">*</span>
+                        </label>
+                        <input type="text" name="date" placeholder="ex. 00:00 am/pm" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      </div>
+                      <!-- input grievance -->
+                      <div class="xl:col-span-2">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Specify your Grievance</label>
+                        <textarea rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                      </div>
+                      
+
+
+                  </div>
+              </div>
+                <!-- page 2 -->
+              <div class="xl:pl-3 sm:pt-3">
+                  <div class="grid gap-2 xl:grid-cols-2">
+                    <div class="xl:col-span-2">
+                        <label class="text-sm font-bold text-gray-500 ">Attach Document</label>
+                        <div class="flex items-center justify-center w-full">
+                          <label class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
+                            <div class="h-full w-full text-center flex flex-col justify-center items-center  ">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-blue-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                              </svg>
+                              <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a file</a> from your computer</p>
+                            </div>
+                            <input type="file" class="hidden">
+                          </label>
+                        </div>
+                        <span class="my-2 text-sm text-gray-300">File type: pdf, png, or jpg</span>
+                      </div>
+                      <div class="xl:col-span-2">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Requested Outcome</label>
+                        <textarea rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="specify the solution/action you want to taken" required></textarea>
+                      </div>
+                      
+
+
+                  </div>
+                </div> 
+            </div>
+            <span class="md:col-span-2 text-xs italic text-red-600 dark:text-red-500 font-medium">
+                *input N/A if not applicable
+              </span>
+              <!-- submit button -->
+            <div class="my-3 flex-auto flex flex-row-reverse">
+              <a href="/pages/profile.html">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Submit
+                </button>
+              </a>
+            </div>
+          </form>
+        </div>  
+
+        
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+</html>
